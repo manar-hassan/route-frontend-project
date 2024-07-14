@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/route-frontend-project/static/css/main.2f0d43be.css",
+    "main.js": "/route-frontend-project/static/js/main.f2ae7e24.js",
+    "index.html": "/route-frontend-project/index.html",
+    "main.2f0d43be.css.map": "/route-frontend-project/static/css/main.2f0d43be.css.map",
+    "main.f2ae7e24.js.map": "/route-frontend-project/static/js/main.f2ae7e24.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2f0d43be.css",
+    "static/js/main.f2ae7e24.js"
+  ]
+}
