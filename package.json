@@ -4,6 +4,8 @@
   
   "version": "0.1.0",
   
+  "homepage": "https://manar-hassan.github.io/route-frontend-project/",
+  
   "private": true,
   
   "dependencies": {
@@ -52,7 +54,9 @@
   "test": "react-scripts test",
   
     
-  "eject": "react-scripts eject"
+  "eject": "react-scripts eject",
+  "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   
   },
   
@@ -117,8 +121,10 @@
   "devDependencies": {
   
     
-  "concurrently": "^8.2.2"
+  "concurrently": "^8.2.2",
+  
+    
+  "gh-pages": "^6.1.1"
   
   }
-  
 }
