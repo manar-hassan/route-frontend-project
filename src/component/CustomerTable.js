@@ -27,23 +27,17 @@ const CustomerTable = () => {
     });
   }, []);
 
-  const isNumeric = (str) => {
-    if (typeof str != "string") return false;
-    return !isNaN(str) && !isNaN(parseFloat(str));
-  };
+
 
   const filteredCustomers = customers.filter(customer => {
-    const customerTransactions = transactions.filter(
-      transaction => transaction.customer_id === customer.id
-    );
-    const totalAmount = customerTransactions.reduce((sum, transaction) => sum + transaction.amount, 0);
+    const customerNameMatch = customer.name.toLowerCase().includes(filter.toLowerCase());
+    const transactionAmountMatch = transactions
+      .filter(t => t.customer_id === customer.id)
+      .some(t => t.amount.toString().includes(filter));
 
-    if (isNumeric(filter)) {
-      return totalAmount >= parseFloat(filter);
-    } else {
-      return customer.name.toLowerCase().includes(filter.toLowerCase());
-    }
+    return customerNameMatch || transactionAmountMatch;
   });
+
 
   const handleCustomerClick = customer => {
     setSelectedCustomer(customer);
