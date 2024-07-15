@@ -46,7 +46,7 @@
   "scripts": {
   
     
-  "start": "concurrently  \"json-server --watch data/data.json --port 3001\" \"react-scripts start\"",
+  "start": "concurrently  \"json-server --watch data/db.json --port 3001\" \"react-scripts start\"",
   
     
   "build": "react-scripts build",

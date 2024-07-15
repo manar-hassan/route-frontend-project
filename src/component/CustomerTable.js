@@ -10,10 +10,20 @@ const CustomerTable = () => {
 
   useEffect(() => {
     axios.get('http://localhost:3001/customers').then(response => {
-      setCustomers(response.data);
+      const customers = response.data.map(customer => ({
+        ...customer,
+        id: Number(customer.id)
+      }));
+      setCustomers(customers);
     });
     axios.get('http://localhost:3001/transactions').then(response => {
-      setTransactions(response.data);
+      const transactions = response.data.map(transaction => ({
+        ...transaction,
+        id: Number(transaction.id),
+        customer_id: Number(transaction.customer_id),
+        amount: Number(transaction.amount)
+      }));
+      setTransactions(transactions);
     });
   }, []);
 
