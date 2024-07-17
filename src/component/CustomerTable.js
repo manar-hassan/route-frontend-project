@@ -9,15 +9,14 @@ const CustomerTable = () => {
   const [selectedCustomer, setSelectedCustomer] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/customers").then((response) => {
-      const customers = response.data.map((customer) => ({
+    axios.get('https://manar-hassan.github.io/api/db.JSON').then((response) => {
+      const customers = response.data.customers.map((customer) => ({
         ...customer,
         id: Number(customer.id),
       }));
       setCustomers(customers);
-    });
-    axios.get("http://localhost:3001/transactions").then((response) => {
-      const transactions = response.data.map((transaction) => ({
+
+      const transactions = response.data.transactions.map((transaction) => ({
         ...transaction,
         id: Number(transaction.id),
         customer_id: Number(transaction.customer_id),
